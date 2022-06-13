@@ -21,6 +21,7 @@ resource "aws_alb_target_group" "selected" {
     unhealthy_threshold = var.unhealthy_threshold
     timeout             = var.timeout
     interval            = var.interval
+    path                = var.health_check_path
   }
 
   lifecycle {

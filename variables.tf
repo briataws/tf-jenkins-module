@@ -97,3 +97,8 @@ variable "user" {
 variable "container_path" {
   description = "Container Mount Point"
 }
+
+variable "health_check_path" {
+  default = "/"
+  description = "health check path for the ALB"
+}

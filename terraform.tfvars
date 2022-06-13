@@ -12,6 +12,7 @@ app_port             = "8080"
 container_path       = "/var/jenkins_home"
 cpu                  = "2048"
 memory               = "4096"
+health_check_path    = "/login"
 
 
 route53_zone_name = "sandbox-testing-private.com"

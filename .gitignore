@@ -4,3 +4,4 @@ Gemfile.lock
 .kitchen/*
 *.lock
 terraform.json
+*.out
