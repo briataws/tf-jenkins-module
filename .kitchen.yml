@@ -1,0 +1,25 @@
+---
+driver:
+  name: terraform
+  variable_files:
+    - testing.tfvars
+
+provisioner:
+  name: terraform
+
+platforms:
+  - name: ubuntu
+
+transport:
+  name: ssh
+  path: ~/.ssh/intersections-sandbox
+
+verifier:
+  name: terraform
+  groups:
+    - name: default
+      hostnames: public_dns
+      username: ubuntu
+
+suites:
+  - name: default

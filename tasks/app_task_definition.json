@@ -1,0 +1,30 @@
+[
+  {
+    "name": "${app_name}",
+    "image": "${image}",
+    "portMappings": [
+      {
+        "containerPort": ${port},
+        "hostPort": ${port}
+      }
+    ],
+    "mountPoints": [
+      {
+        "sourceVolume": "service-storage",
+        "containerPath": "${container_path}"
+      }
+    ],
+    "memory": ${memory},
+    "networkMode": "awsvpc",
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${awslogs-group}",
+        "awslogs-region": "${region}",
+        "awslogs-create-group": "true",
+        "awslogs-stream-prefix": "${app_name}"
+      }
+    },
+    "environment": ${env_vars}
+  }
+]

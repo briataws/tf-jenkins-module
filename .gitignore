@@ -1,0 +1,6 @@
+*.tfstate*
+.terraform/
+Gemfile.lock
+.kitchen/*
+*.lock
+terraform.json
