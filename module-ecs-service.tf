@@ -26,7 +26,7 @@ resource "aws_security_group" "ecs_service" {
     from_port       = 0
     to_port         = 0
     protocol        = "-1"
-    security_groups = ["${aws_security_group.ecs_service.id}"]
+    self = true
   }
 
   tags = {
@@ -61,4 +61,9 @@ resource "aws_ecs_service" "app" {
 
   # https://github.com/hashicorp/terraform/issues/12634
   depends_on = [aws_alb_listener.selected]
+
+  service_registries {
+    registry_arn = aws_service_discovery_service.terraform.arn
+    container_name = "jenkins"
+  }
 }
